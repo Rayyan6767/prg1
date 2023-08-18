@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: black; 
+            overflow: hidden;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        ul.navbar li {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px 20px; 
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #000000; 
+        }
+
+        .navbar-logo {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar-menu-icon {
+            cursor: pointer;
+            font-size: 24px;
+            padding: 16px;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-links li {
+            margin-left: 10px; 
+        }
+
+        
+        @media screen and (max-width: 600px) {
+            ul.navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .navbar-logo {
+                margin-top: 10px;
+            }
+
+            .navbar-links {
+                display: none;
+            }
+
+            .navbar-menu-icon {
+                margin-left: auto; 
+                margin-right: 10px;
+                display: block;
+            }
+
+            ul.navbar.active .navbar-links {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                margin-top: 10px;
+            }
+        }
+    </style>
+    <script>
+        
+        function toggleMenu() {
+            var navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</head>
+<body>
+<ul class="navbar">
+    <li><a class="navbar-logo" href="#">Logo</a></li>
+    <li class="navbar-links">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+    </li>
+    <li><a class="navbar-menu-icon" onclick="toggleMenu()">&#9776;</a></li>
+</ul>
+
+</body>
+</html>
+
